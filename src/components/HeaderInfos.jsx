@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import PercentChange from "./PercentChange";
+import TableFilters from "./TableFilters";
 
 function HeaderInfos() {
   const [headerData, setHeaderData] = useState([]);
@@ -35,7 +36,18 @@ function HeaderInfos() {
             percent={headerData.market_cap_change_percentage_24h_usd}
           />
         </li>
+        <li>
+          BTC dominance :
+          {headerData.market_cap_percentage &&
+            headerData.market_cap_percentage.btc.toFixed(1) + "%"}
+        </li>
+        <li>
+          BTC dominance :
+          {headerData.market_cap_percentage &&
+            headerData.market_cap_percentage.eth.toFixed(1) + "%"}
+        </li>
       </ul>
+      <TableFilters />
     </div>
   );
 }
