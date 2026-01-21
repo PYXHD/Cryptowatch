@@ -1,4 +1,4 @@
-@import "settings.module";
-@import "./components/table";
-@import "./components/coinChart";
-@import "./components/header";
+@use "settings.module";
+@use "./components/table";
+@use "./components/coinChart";
+@use "./components/header";

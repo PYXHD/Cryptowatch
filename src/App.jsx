@@ -41,8 +41,8 @@ function App() {
       <header>
         <HeaderInfos />
         <GlobalChart coinsData={coinsData} />
-        <Table coinsData={coinsData} />
       </header>
+      <Table coinsData={coinsData} />
     </div>
   );
 }

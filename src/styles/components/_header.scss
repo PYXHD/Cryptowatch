@@ -1,3 +1,5 @@
+@use "../settings.module" as var;
+
 header {
   margin: 20px 0 25px 0;
   display: grid;
@@ -21,12 +23,12 @@ header {
       background: rgba(20, 20, 20, 0.85);
       padding: 10px;
       border-radius: 14px;
-      box-shadow: $shadow;
+      box-shadow: var.$shadow;
       display: grid;
       align-items: center;
       height: 132px;
       backdrop-filter: blur(3px);
-      border-bottom: 2px solid $color1;
+      border-bottom: 2px solid var.$color1;
 
       ul {
         height: 100%;
@@ -50,9 +52,9 @@ header {
         }
       }
       h1 {
-        font-family: $font2;
+        font-family: var.$font2;
         font-size: 1.5rem;
-        color: $color1;
+        color: var.$color1;
         z-index: 2;
         position: relative;
         text-align: center;
@@ -60,7 +62,7 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: -webkit-linear-gradient(360deg, $color1, #0debc6);
+        background: -webkit-linear-gradient(360deg, var.$color1, #0debc6);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         height: 36px;
@@ -96,11 +98,11 @@ header {
 
       .table-filters-container {
         display: flex;
-        background: $black1;
+        background: var.$black1;
         border-radius: 10px;
         padding: 4px;
         justify-content: space-between;
-        border-bottom: 1px solid $color1;
+        border-bottom: 1px solid var.$color1;
 
         .stable-checkbox-container {
           display: flex;
@@ -111,7 +113,7 @@ header {
 
             &:checked {
               ~ label {
-                background: $black2;
+                background: var.$black2;
               }
             }
             ~ label {
@@ -138,7 +140,7 @@ header {
           }
 
           &.active {
-            background: $black2;
+            background: var.$black2;
           }
         }
 
@@ -157,7 +159,7 @@ header {
   .global-chart {
     border-radius: 14px;
     overflow: hidden;
-    box-shadow: $shadow;
+    box-shadow: var.$shadow;
 
     @media screen and (max-width: 1150px) {
       display: none;
