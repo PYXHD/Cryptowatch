@@ -14,7 +14,7 @@ function App() {
 
     axios
       .get(
-        "/api/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false",
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false&price_change_percentage=1h,24h,7d,14d,30d,200d,1y",
       )
       .then((res) => {
         setCoinsData(res.data);
@@ -28,6 +28,7 @@ function App() {
         setIsLoading(false);
       });
   }, []);
+
   if (isLoading) {
     return <p>Chargement des données…</p>;
   }
