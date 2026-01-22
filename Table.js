@@ -1,10 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import TableLine from "./TableLine";
 import ToTop from "./ToTop";
 
-function Table({ coinsData }) {
-  const [rangeNumber, setRangeNumber] = useState(100);
+const Table = ({ coinsData }) => {
   const [orderBy, setOrderBy] = useState("");
+  const [rangeNumber, setRangeNumber] = useState(100);
 
   const tableHeader = [
     "Prix",
@@ -15,9 +15,37 @@ function Table({ coinsData }) {
     "1s",
     "1m",
     "6m",
-    "1a",
+    "1y",
     "ATH",
   ];
+
+  const excludeCoin = (coin) => {
+    if (
+      coin === "usdt" ||
+      coin === "usdc" ||
+      coin === "busd" ||
+      coin === "dai" ||
+      coin === "ust" ||
+      coin === "mim" ||
+      coin === "tusd" ||
+      coin === "usdp" ||
+      coin === "usdn" ||
+      coin === "fei" ||
+      coin === "tribe" ||
+      coin === "gusd" ||
+      coin === "frax" ||
+      coin === "lusd" ||
+      coin === "husd" ||
+      coin === "ousd" ||
+      coin === "xsgd" ||
+      coin === "usdx" ||
+      coin === "eurs"
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  };
 
   return (
     <div className="table-container">
@@ -28,9 +56,7 @@ function Table({ coinsData }) {
             <input
               type="text"
               value={rangeNumber}
-              onChange={(e) => {
-                setRangeNumber(e.target.value);
-              }}
+              onChange={(e) => setRangeNumber(e.target.value)}
             />
           </span>
           <input
@@ -38,18 +64,13 @@ function Table({ coinsData }) {
             min="1"
             max="250"
             value={rangeNumber}
-            onChange={(e) => {
-              setRangeNumber(e.target.value);
-            }}
+            onChange={(e) => setRangeNumber(e.target.value)}
           />
           <ToTop />
         </div>
         {tableHeader.map((el) => (
           <li key={el}>
             <input
-              type="radio"
-              name="header-element"
-              id={el}
               defaultChecked={
                 el === orderBy || el === orderBy + "reverse" ? true : false
               }
@@ -60,6 +81,9 @@ function Table({ coinsData }) {
                   setOrderBy(el);
                 }
               }}
+              type="radio"
+              name="header-el"
+              id={el}
             />
             <label htmlFor={el}>{el}</label>
           </li>
@@ -152,9 +176,11 @@ function Table({ coinsData }) {
                 null;
             }
           })
-          .map((coin, index) => <TableLine coin={coin} index={index} />)}
+          .map((coin, index) => (
+            <TableLine coin={coin} key={coin.id} index={index} />
+          ))}
     </div>
   );
-}
+};
 
 export default Table;

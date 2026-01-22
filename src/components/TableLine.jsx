@@ -1,4 +1,5 @@
 import PercentChange from "./PercentChange";
+import StarIcon from "./StarIcon";
 
 function TableLine({ coin, index }) {
   const priceFormater = (num) => {
@@ -21,7 +22,7 @@ function TableLine({ coin, index }) {
   return (
     <div className="table-line">
       <div className="infos-container">
-        <span>*</span>
+        <StarIcon coinId={coin.id} />
         <p>{index + 1}</p>
         <div className="img">
           <img src={coin.image} height="20" alt="logo" />
@@ -52,7 +53,11 @@ function TableLine({ coin, index }) {
       <PercentChange percent={coin.price_change_percentage_30d_in_currency} />
       <PercentChange percent={coin.price_change_percentage_200d_in_currency} />
       <PercentChange percent={coin.price_change_percentage_1y_in_currency} />
-      {/* 2min03 */}
+      {coin.ath_change_percentage > -3 ? (
+        <p>ATH !</p>
+      ) : (
+        <PercentChange percent={coin.ath_change_percentage} />
+      )}
     </div>
   );
 }
