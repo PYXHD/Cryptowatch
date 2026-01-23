@@ -1,11 +1,8 @@
 import { useState } from "react";
 import PercentChange from "./PercentChange";
 import StarIcon from "./StarIcon";
-import CoinChart from "./CoinChart";
 
 function TableLine({ coin, index }) {
-  const [showChart, setShowChart] = useState(false);
-
   const priceFormater = (num) => {
     if (Math.abs(Math.round(num)) < 1000) {
       return new Intl.NumberFormat("en-US", {
@@ -16,12 +13,13 @@ function TableLine({ coin, index }) {
       return num;
     }
   };
+
   const mktCapFormater = (num) => {
     if (!num) return "0";
     const millions = Math.floor(num / 1_000_000);
-
     return millions.toLocaleString("fr-FR");
   };
+
   return (
     <div className="table-line">
       <div className="infos-container">
@@ -31,16 +29,6 @@ function TableLine({ coin, index }) {
           <img src={coin.image} height="20" alt="logo" />
         </div>
         <div className="infos">
-          <div
-            className="chart-img"
-            onMouseEnter={() => setShowChart(true)}
-            onMouseLeave={() => setShowChart(false)}
-          >
-            <img src="./assets/chart-icon.svg" alt="chart-icon" />
-            <div className="chart-container" id={coin.name}>
-              {showChart && <CoinChart coinId={coin.id} coinName={coin.name} />}
-            </div>
-          </div>
           <h4>{coin.name}</h4>
           <span>- {coin.symbol.toUpperCase()}</span>
           <a
@@ -71,4 +59,5 @@ function TableLine({ coin, index }) {
     </div>
   );
 }
+
 export default TableLine;

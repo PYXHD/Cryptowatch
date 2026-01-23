@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { getGlobal } from "../api";
 
 import PercentChange from "./PercentChange";
 import TableFilters from "./TableFilters";
@@ -8,9 +8,13 @@ function HeaderInfos() {
   const [headerData, setHeaderData] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`https://api.coingecko.com/api/v3/global`)
-      .then((res) => setHeaderData(res.data.data));
+    const fetchData = async () => {
+      const data = await getGlobal();
+
+      setHeaderData((prev) => [...prev, data]);
+    };
+
+    fetchData();
   }, []);
 
   return (
