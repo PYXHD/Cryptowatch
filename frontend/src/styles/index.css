@@ -303,6 +303,11 @@ label {
     display: none;
   }
 }
+@media screen and (max-width: 375px) {
+  .table-container .table-line p:nth-child(7) {
+    display: none;
+  }
+}
 .table-container .table-line:hover {
   background: rgba(128, 128, 128, 0.25);
 }

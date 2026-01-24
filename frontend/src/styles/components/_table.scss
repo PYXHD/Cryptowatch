@@ -178,7 +178,11 @@
         display: none;
       }
     }
-
+    @media screen and (max-width: 375px) {
+      p:nth-child(7) {
+        display: none;
+      }
+    }
     &:hover {
       background: rgba(128, 128, 128, 0.25);
     }
