@@ -173,6 +173,11 @@ label {
     display: none;
   }
 }
+@media screen and (max-width: 375px) {
+  .table-container .table-header li:nth-child(7) {
+    display: none;
+  }
+}
 .table-container .table-header span input {
   width: 30px;
   font-family: "Saira Condensed", sans-serif;
@@ -573,6 +578,11 @@ header .header-container .title h1 {
   header .header-container .title h1 {
     -webkit-transform: translateY(-6px);
             transform: translateY(-6px);
+  }
+}
+@media screen and (max-width: 425px) {
+  header .header-container .title h1 {
+    font-size: 1rem;
   }
 }
 header .header-container .title h1 img {

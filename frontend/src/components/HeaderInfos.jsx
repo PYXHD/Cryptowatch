@@ -5,32 +5,39 @@ import PercentChange from "./PercentChange";
 import TableFilters from "./TableFilters";
 
 function HeaderInfos() {
-  const [headerData, setHeaderData] = useState([]);
+  const [headerData, setHeaderData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getGlobal();
+      try {
+        const response = await getGlobal();
 
-      setHeaderData((prev) => [...prev, data]);
+        setHeaderData(response.data);
+      } catch (error) {
+        console.error("Erreur chargement header :", error);
+      }
     };
 
     fetchData();
   }, []);
+
+  if (!headerData) return null;
 
   return (
     <div className="header-container">
       <ul className="title">
         <li>
           <h1>
-            <img src="./assets/logo.png" alt="" /> Watch Tower
+            <img src="./assets/logo.png" alt="logo" /> Watch Tower
           </h1>
         </li>
+
         <li>
           Crypto-monnaies :{" "}
-          {headerData.active_cryptocurrencies &&
-            headerData.active_cryptocurrencies.toLocaleString()}
+          {headerData.active_cryptocurrencies.toLocaleString()}
         </li>
-        <li>Marchés : {headerData.markets && headerData.markets}</li>
+
+        <li>Marchés : {headerData.markets}</li>
       </ul>
 
       <ul className="infos-mkt">
@@ -40,17 +47,16 @@ function HeaderInfos() {
             percent={headerData.market_cap_change_percentage_24h_usd}
           />
         </li>
+
         <li>
-          BTC dominance :
-          {headerData.market_cap_percentage &&
-            headerData.market_cap_percentage.btc.toFixed(1) + "%"}
+          BTC dominance : {headerData.market_cap_percentage.btc.toFixed(1)}%
         </li>
+
         <li>
-          BTC dominance :
-          {headerData.market_cap_percentage &&
-            headerData.market_cap_percentage.eth.toFixed(1) + "%"}
+          ETH dominance : {headerData.market_cap_percentage.eth.toFixed(1)}%
         </li>
       </ul>
+
       <TableFilters />
     </div>
   );

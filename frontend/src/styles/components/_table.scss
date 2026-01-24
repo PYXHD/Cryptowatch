@@ -65,6 +65,11 @@
         display: none;
       }
     }
+    @media screen and (max-width: 375px) {
+      li:nth-child(7) {
+        display: none;
+      }
+    }
 
     span {
       input {
