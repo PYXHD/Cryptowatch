@@ -126,7 +126,7 @@ label {
 @media screen and (max-width: 375px) {
   .table-container .table-header,
   .table-container .table-line {
-    grid-template-columns: 100px 80px repeat(4, 1fr);
+    grid-template-columns: 100px 80px repeat(3, 1fr);
   }
 }
 .table-container .table-header {
@@ -202,6 +202,11 @@ label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+@media screen and (max-width: 375px) {
+  .table-container .table-header .range-container {
+    grid-template-columns: 60px 50px 20px;
+  }
 }
 .table-container .table-header .range-container input[type=range] {
   -webkit-appearance: none;

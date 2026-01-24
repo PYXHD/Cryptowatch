@@ -22,7 +22,7 @@
       grid-template-columns: 170px 80px repeat(4, 1fr);
     }
     @media screen and (max-width: 375px) {
-      grid-template-columns: 100px 80px repeat(4, 1fr);
+      grid-template-columns: 100px 80px repeat(3, 1fr);
     }
   }
   .table-header {
@@ -93,6 +93,10 @@
       display: grid;
       grid-template-columns: 60px 1fr 30px;
       align-items: center;
+
+      @media screen and (max-width: 375px) {
+        grid-template-columns: 60px 50px 20px;
+      }
 
       input[type="range"] {
         appearance: none;
