@@ -21,6 +21,9 @@
     @media screen and (max-width: 540px) {
       grid-template-columns: 170px 80px repeat(4, 1fr);
     }
+    @media screen and (max-width: 375px) {
+      grid-template-columns: 100px 80px repeat(4, 1fr);
+    }
   }
   .table-header {
     height: 44px;
@@ -250,6 +253,10 @@
         h4 {
           margin-left: 6px;
           letter-spacing: 1px;
+
+          @media screen and (max-width: 375px) {
+            display: none;
+          }
         }
         span {
           color: var.$white2;

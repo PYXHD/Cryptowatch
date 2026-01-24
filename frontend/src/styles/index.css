@@ -123,6 +123,12 @@ label {
     grid-template-columns: 170px 80px repeat(4, 1fr);
   }
 }
+@media screen and (max-width: 375px) {
+  .table-container .table-header,
+  .table-container .table-line {
+    grid-template-columns: 100px 80px repeat(4, 1fr);
+  }
+}
 .table-container .table-header {
   height: 44px;
   -webkit-box-align: center;
@@ -390,6 +396,11 @@ label {
 .table-container .table-line .infos-container .infos h4 {
   margin-left: 6px;
   letter-spacing: 1px;
+}
+@media screen and (max-width: 375px) {
+  .table-container .table-line .infos-container .infos h4 {
+    display: none;
+  }
 }
 .table-container .table-line .infos-container .infos span {
   color: rgb(172, 172, 172);
