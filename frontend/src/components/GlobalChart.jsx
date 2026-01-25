@@ -45,7 +45,7 @@ function GlobalChart({ coinsData }) {
       .map((coin) => ({
         name: `${coin.symbol.toUpperCase()} ${coin.market_cap_change_percentage_24h.toFixed(1)}%`,
         size: coin.market_cap,
-        fill: colorPicker(coin.price_change_percentage_24h),
+        fill: colorPicker(coin.market_cap_change_percentage_24h),
       }));
 
     setDataArray(chartData);
