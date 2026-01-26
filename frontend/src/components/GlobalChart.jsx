@@ -43,7 +43,11 @@ function GlobalChart({ coinsData }) {
       .filter((coin) => excludeCoin(coin.symbol))
       .slice(0, 45)
       .map((coin) => ({
-        name: `${coin.symbol.toUpperCase()} ${coin.market_cap_change_percentage_24h.toFixed(1)}%`,
+        name: `${coin.symbol.toUpperCase()} ${
+          coin.market_cap_change_percentage_24h == null
+            ? "—"
+            : coin.market_cap_change_percentage_24h.toFixed(1)
+        }%`,
         size: coin.market_cap,
         fill: colorPicker(coin.market_cap_change_percentage_24h),
       }));
