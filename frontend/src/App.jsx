@@ -17,7 +17,7 @@ function App() {
         const data = await getCoins();
         setCoinsData(data);
       } catch (err) {
-        setError("Impossible de charger les données");
+        setError("Service temporairement limité, revenez plus tard");
         console.error(err);
       } finally {
         setIsLoading(false);
