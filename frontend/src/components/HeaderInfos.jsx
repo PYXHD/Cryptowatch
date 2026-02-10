@@ -28,7 +28,7 @@ function HeaderInfos() {
       <ul className="title">
         <li>
           <h1>
-            <img src="./assets/logo.png" alt="logo" /> Watch Tower
+            <img src="./assets/logo.png" alt="logo" /> CryptoWatch
           </h1>
         </li>
 
