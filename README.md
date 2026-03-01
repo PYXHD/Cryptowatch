@@ -9,7 +9,6 @@ Application web de suivi des cryptomonnaies permettant :
 - affichage des données via l’API publique CoinGecko
 - communication entre un frontend React (Vite) et un backend Node/Express
 
-///////////////////////////////////////////////
 🚀 Aperçu
 
 Cryptowatch permet de visualiser les principales cryptomonnaies avec :
@@ -21,7 +20,6 @@ Cryptowatch permet de visualiser les principales cryptomonnaies avec :
 - classement Top 250
 - mise à jour dynamique des données
 
-///////////////////////////////////////////////
 🛠️ Stack technique
 Frontend
 
@@ -41,7 +39,6 @@ API externe
 
 - CoinGecko Public API
 
-///////////////////////////////////////////////
 ⚙️ Fonctionnement
 
 - le frontend envoie une requête au backend.
@@ -49,7 +46,6 @@ API externe
 - les données sont traitées puis renvoyées au frontend.
 - l’interface met à jour les informations en temps réel.
 
-///////////////////////////////////////////////
 🎯 Objectifs pédagogiques
 
 Ce projet m’a permis de :
@@ -59,7 +55,6 @@ Ce projet m’a permis de :
 - mettre en place une architecture frontend/backend
 - gérer les états et le rendu dynamique dans React
 
-///////////////////////////////////////////////
 👨‍💻 Auteur
 
 CHARVOT Marc
