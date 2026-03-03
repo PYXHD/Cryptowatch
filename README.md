@@ -1,26 +1,21 @@
 # Cryptowatch
 
-<img src="./preview.png" width="800" />
-
-Application web de suivi des cryptomonnaies permettant :
-
-- consultation des cours en temps réel
-- analyse des variations sur différentes périodes
-- affichage des données via l’API publique CoinGecko
-- communication entre un frontend React (Vite) et un backend Node/Express
+Application web de suivi des cryptomonnaies développée avec React (Vite) et Node/Express, permettant de consulter les données de marché en temps réel via l’API CoinGecko.
 
 ## 🚀 Aperçu
 
-Cryptowatch permet de visualiser les principales cryptomonnaies avec :
+<img src="./preview.png" width="800" />
 
-- prix actuel
-- market Cap
-- volume
-- variations sur 1h / 24h / 7j / 1m / 6m / 1a / ATH
-- classement Top 250
-- mise à jour dynamique des données
+## 📌 Fonctionnalités
 
-## 🛠️ Stack technique
+- 💰 consultation des prix en temps réel
+- 📊 affichage du Market Cap et du Volume
+- 📈 variations sur : 1h / 24h / 7j / 1m / 6m / 1a / ATH
+- 🏆 classement des Top 250 cryptomonnaies
+- 🔄 mise à jour dynamique des données
+- 🌐 communication Frontend ↔ Backend
+
+## 🛠️ Technologies utilisées
 
 ### Frontend
 
@@ -33,28 +28,33 @@ Cryptowatch permet de visualiser les principales cryptomonnaies avec :
 
 - Node.js
 - Express
-- gestion des routes API
-- appels vers l’API CoinGecko
-
-### API externe
-
+- API externe
 - CoinGecko Public API
 
 ## ⚙️ Fonctionnement
 
-- le frontend envoie une requête au backend.
-- le backend appelle l’API CoinGecko.
-- les données sont traitées puis renvoyées au frontend.
-- l’interface met à jour les informations en temps réel.
+- le frontend envoie une requête au backend
+- le backend interroge l’API CoinGecko
+- les données sont traitées et sécurisées côté serveur
+- les informations sont renvoyées au frontend
+- l’interface met à jour l’affichage dynamiquement
 
-## 🎯 Objectifs pédagogiques
+## 🎯 Objectifs du projet
 
 Ce projet m’a permis de :
 
 - comprendre la gestion des appels API
-- maîtriser l’asynchronisme en JavaScript (async/await, promises)
-- mettre en place une architecture frontend/backend
+- maîtriser l’asynchronisme (async/await, Promises)
+- structurer une architecture frontend/backend
 - gérer les états et le rendu dynamique dans React
+- organiser un projet fullstack
+
+## 🎯 Ce que j’ai appris
+
+- communication client ↔ serveur
+- gestion des erreurs API
+- optimisation des requêtes
+- séparation des responsabilités (MVC simplifié)
 
 ## 👨‍💻 Auteur
 
